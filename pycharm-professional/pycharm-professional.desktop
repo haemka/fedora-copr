@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=PyCharm Professional Edition
+Icon=pycharm-professional
+Comment=The Python IDE for Professional Developers.
+Exec=/opt/pycharm-professional/bin/pycharm.sh %f
+Terminal=false
+Categories=Development;IDE;
+StartupNotify=true
+StartupWMClass=jetbrains-pycharm
