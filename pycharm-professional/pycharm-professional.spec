@@ -11,7 +11,6 @@ Source0:        https://download.jetbrains.com/python/pycharm-professional-%{ver
 Source1:        https://raw.githubusercontent.com/haemka/fedora-copr/main/pycharm-professional/pycharm-professional.desktop
 
 BuildRequires: pkg-config desktop-file-utils
-Requires: java
 
 %description
 The Python IDE for Professional Developers.
