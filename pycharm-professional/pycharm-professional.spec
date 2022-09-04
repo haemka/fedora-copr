@@ -9,9 +9,9 @@ License:        custom
 URL:            https://www.jetbrains.com/pycharm/
 Source0:        https://download.jetbrains.com/python/pycharm-professional-%{version}.tar.gz
 Source1:        https://raw.githubusercontent.com/haemka/fedora-copr/main/pycharm-professional/pycharm-professional.desktop
-Requires:       java
 
 BuildRequires: pkg-config desktop-file-utils
+Requires: java
 
 %description
 The Python IDE for Professional Developers.
