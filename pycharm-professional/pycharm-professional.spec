@@ -2,8 +2,8 @@
 %global __requires_exclude_from plugins/.*/(.*-aarch64/.*\.so|.*/bin/.*\.js)$
 
 Name:           pycharm-professional
-Version:        2022.2.1
-Release:        2%{?dist}
+Version:        2022.2.2
+Release:        1%{?dist}
 Summary:        The Python IDE for Professional Developers
 License:        custom
 URL:            https://www.jetbrains.com/pycharm/
