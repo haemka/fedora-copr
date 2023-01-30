@@ -2,7 +2,7 @@
 %global __requires_exclude_from plugins/.*/(.*-aarch64/.*\.so|.*/bin/.*\.js)$
 
 Name:           pycharm-professional
-Version:        2022.3.1
+Version:        2022.2.4
 Release:        1%{?dist}
 Summary:        The Python IDE for Professional Developers
 License:        custom
@@ -11,7 +11,7 @@ Source0:        https://download.jetbrains.com/python/pycharm-professional-%{ver
 Source1:        https://raw.githubusercontent.com/haemka/fedora-copr/main/pycharm-professional/pycharm-professional.desktop
 
 BuildRequires: pkg-config desktop-file-utils
-Requires: java
+Requires: java musl-libc
 
 %description
 The Python IDE for Professional Developers.
