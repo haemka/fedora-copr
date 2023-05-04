@@ -8,7 +8,7 @@ Source0:        https://download.jetbrains.com/python/pycharm-professional-%{ver
 Source1:        https://raw.githubusercontent.com/haemka/fedora-copr/main/pycharm-professional/pycharm-professional.desktop
 
 BuildRequires: pkg-config desktop-file-utils zlib
-Requires: java
+Requires: java python3
 
 %global debug_package %{nil}
 %global __requires_exclude_from plugins/.*/(.*-(aarch64|musl)/.*\.so|.*/bin/.*\.js)$
