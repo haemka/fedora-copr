@@ -1,6 +1,3 @@
-%global debug_package %{nil}
-%global __requires_exclude_from plugins/.*/(.*-aarch64/.*\.so|.*/bin/.*\.js)$
-
 Name:           pycharm-professional
 Version:        2023.1.1
 Release:        1%{?dist}
@@ -11,7 +8,11 @@ Source0:        https://download.jetbrains.com/python/pycharm-professional-%{ver
 Source1:        https://raw.githubusercontent.com/haemka/fedora-copr/main/pycharm-professional/pycharm-professional.desktop
 
 BuildRequires: pkg-config desktop-file-utils
-Requires: java musl-libc
+Requires: java
+
+%global debug_package %{nil}
+%global __requires_exclude_from plugins/.*/(.*-(aarch64|musl)/.*\.so|.*/bin/.*\.js)$
+%global __requires_exclude ^.*musl.*\\.so.*$
 
 %description
 The Python IDE for Professional Developers.
@@ -20,7 +21,7 @@ The Python IDE for Professional Developers.
 %autosetup -n pycharm-%{version} -p1
 
 # Replace python shebangs to make them compatible with fedora
-find -type f -name "*.py" -exec sed -e 's|/usr/bin/env python|%{__python3}|g' \
+find -type f -name "*.py" -exec sed -e 's|/usr/bin/env python.*$|%{__python3}|g' \
                                     -i "{}" \;
 
 find -type f -name "*.sh" -exec sed -e 's|/bin/sh|/usr/bin/sh|g' \
@@ -63,5 +64,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 /opt/%{name}/*
 
 %changelog
+* Thu May 04 2023 haemka <copr@haemka.de>
+- Updated to version 2023.1.1
 * Wed Jan 11 2023 haemka <copr@haemka.de>
 - Updated to version 2022.3.1
